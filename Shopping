@@ -1,4 +1,4 @@
-package burlasshopping;
+package burlas;
 import javax.swing.JOptionPane;
 
 class Product {
