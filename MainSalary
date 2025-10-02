@@ -1,4 +1,5 @@
 package burlas;
+import javax.swing.JOptionPane;
 class Manager extends Employee {
     private double bonus;
 
