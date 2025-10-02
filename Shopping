@@ -1,0 +1,48 @@
+package burlasshopping;
+import javax.swing.JOptionPane;
+
+class Product {
+    String name;
+    double price;
+
+    public Product(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    public double calculateFinalPrice() {
+        return price;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+class Electronic extends Product {
+    private double warrantyFee;
+
+    public Electronic(String name, double price, double warrantyFee) {
+        super(name, price);
+        this.warrantyFee = warrantyFee;
+    }
+
+    @Override
+    public double calculateFinalPrice() {
+        return super.calculateFinalPrice() + warrantyFee;
+    }
+}
+
+class Clothing extends Product {
+    private double discount;
+
+    public Clothing(String name, double price, double discount) {
+        super(name, price);
+        this.discount = discount;
+    }
+
+    @Override
+    public double calculateFinalPrice() {
+        return super.calculateFinalPrice() * (1 - discount);
+    }
+}
