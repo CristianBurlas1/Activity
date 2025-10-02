@@ -1,5 +1,4 @@
 package burlas;
-import javax.swing.JOptionPane;
 
 class Employee {
     String name;
