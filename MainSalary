@@ -1,0 +1,33 @@
+package BurlasSalary;
+class Manager extends Employee {
+    private double bonus;
+
+    public Manager(String name, double baseSalary, double bonus) {
+        super(name, baseSalary);
+        this.bonus = bonus;
+    }
+
+    @Override
+    public double calculateSalary() {
+        return super.calculateSalary() + bonus;
+    }
+}
+
+public class SalaryCalculator {
+    public static void main(String[] args) {
+        String name = JOptionPane.showInputDialog("Enter employee name:");
+        double baseSalary = Double.parseDouble(JOptionPane.showInputDialog("Enter base salary:"));
+        int isManager = JOptionPane.showConfirmDialog(null, "Is the employee a manager?", "Manager Check", JOptionPane.YES_NO_OPTION);
+
+        Employee employee;
+        if (isManager == JOptionPane.YES_OPTION) {
+            double bonus = Double.parseDouble(JOptionPane.showInputDialog("Enter bonus:"));
+            employee = new Manager(name, baseSalary, bonus);
+        } else {
+            employee = new Employee(name, baseSalary);
+        }
+
+        double totalSalary = employee.calculateSalary();
+        JOptionPane.showMessageDialog(null, "Total Salary of " + employee.getName() + ": " + totalSalary);
+    }
+}
