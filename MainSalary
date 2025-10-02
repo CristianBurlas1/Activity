@@ -1,4 +1,4 @@
-package BurlasSalary;
+package burlas;
 class Manager extends Employee {
     private double bonus;
 
