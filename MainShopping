@@ -1,5 +1,7 @@
 package burlas;
+import javax.swing.JOptionPane;
 public class ShoppingSystem {
+
     public static void main(String[] args) {
         String name = JOptionPane.showInputDialog("Enter product name:");
         double price = Double.parseDouble(JOptionPane.showInputDialog("Enter price:"));
