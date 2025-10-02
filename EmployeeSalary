@@ -1,0 +1,46 @@
+package burlas;
+import javax.swing.JOptionPane;
+
+class Person {
+    String name;
+    int employeeID;
+
+    public Person(String name, int employeeID) {
+        this.name = name;
+        this.employeeID = employeeID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getEmployeeID() {
+        return employeeID;
+    }
+}
+
+class Employee extends Person {
+    double basicSalary;
+
+    public Employee(String name, int employeeID, double basicSalary) {
+        super(name, employeeID);
+        this.basicSalary = basicSalary;
+    }
+
+    public double getBasicSalary() {
+        return basicSalary;
+    }
+}
+
+class Salary extends Employee {
+    private double hra;
+
+    public Salary(String name, int employeeID, double basicSalary, double hra) {
+        super(name, employeeID, basicSalary);
+        this.hra = hra;
+    }
+
+    public double calculateTotalSalary() {
+        return super.getBasicSalary() + hra;
+    }
+}
