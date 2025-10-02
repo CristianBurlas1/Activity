@@ -1,0 +1,21 @@
+package burlas;
+import javax.swing.JOptionPane;
+public class EmployeeSalary {
+    public static void main(String[] args) {
+        String name = JOptionPane.showInputDialog("Enter Name:");
+        int employeeID = Integer.parseInt(JOptionPane.showInputDialog("Enter Employee ID:"));
+        double basicSalary = Double.parseDouble(JOptionPane.showInputDialog("Enter Basic Salary:"));
+        double hra = Double.parseDouble(JOptionPane.showInputDialog("Enter HRA:"));
+
+        Salary salary = new Salary(name, employeeID, basicSalary, hra);
+
+        double totalSalary = salary.calculateTotalSalary();
+        String output = "Name: " + salary.getName() + "\n" +
+                        "Employee ID: " + salary.getEmployeeID() + "\n" +
+                        "Basic Salary: " + salary.getBasicSalary() + "\n" +
+                        "HRA: " + hra + "\n" +
+                        "Total Salary: " + totalSalary;
+
+        JOptionPane.showMessageDialog(null, output);
+    }
+}
