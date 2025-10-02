@@ -1,0 +1,23 @@
+package burlas;
+public class ShoppingSystem {
+    public static void main(String[] args) {
+        String name = JOptionPane.showInputDialog("Enter product name:");
+        double price = Double.parseDouble(JOptionPane.showInputDialog("Enter price:"));
+        String productType = JOptionPane.showInputDialog("Enter product type (electronics/clothes):");
+
+        Product product;
+        if (productType.equalsIgnoreCase("electronics")) {
+            double warrantyFee = Double.parseDouble(JOptionPane.showInputDialog("Enter warranty fee:"));
+            product = new Electronic(name, price, warrantyFee);
+        } else if (productType.equalsIgnoreCase("clothes")) {
+            double discount = Double.parseDouble(JOptionPane.showInputDialog("Enter discount (e.g., 0.1 for 10%):"));
+            product = new Clothing(name, price, discount);
+        } else {
+            JOptionPane.showMessageDialog(null, "Invalid product type.");
+            return;
+        }
+
+        double finalPrice = product.calculateFinalPrice();
+        JOptionPane.showMessageDialog(null, "Final price of " + productType + ": " + finalPrice);
+    }
+}
